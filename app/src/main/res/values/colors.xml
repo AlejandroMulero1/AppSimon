@@ -9,8 +9,12 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="rojo">#F34F1C</color>
+    <color name="rojoEncendido">#D13A0B</color>
     <color name="verde">#7FBC00</color>
+    <color name="verdeEncendido">#A1EF00</color>
     <color name="amarillo">#FFBA01</color>
+    <color name="amarilloEncendido">#CD9500</color>
     <color name="azul">#01A6F0</color>
+    <color name="azulEncendido">#26BBFE</color>
     <color name="gris">#747474</color>
 </resources>

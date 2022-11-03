@@ -1,10 +1,12 @@
 package com.example.appsimon
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,6 +30,18 @@ class ResultadosFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if(context is PulsarBoton){
+            listener=context
+        }
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        listener=null
+    }
+    private var listener: PulsarBoton?=null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +50,15 @@ class ResultadosFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_mostrar_estado, container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        view.findViewById<Button>(R.id.btnJugar).setOnClickListener{
+            listener?.empezarPartida()
+        }
+
+    }
+
 
     companion object {
         /**
